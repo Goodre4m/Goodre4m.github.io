@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"goodream.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":220,"display":"post","padding":18,"offset":18,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"slideUpBigIn","post_header":"slideUpIn","post_body":"slideUpIn","coll_header":"slideUpIn","sidebar":"slideDownIn"}}};
+  </script>
+
+  <meta name="description" content="厚积薄发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Goodream">
+<meta property="og:url" content="https://goodream.cn/index.html">
+<meta property="og:site_name" content="Goodream">
+<meta property="og:description" content="厚积薄发">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Goodream">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="DIP">
+<meta property="article:tag" content="CV">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://goodream.cn/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Goodream</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Goodream" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Goodream</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Make It Come True</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://goodream.cn/2020/05/02/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Goodream">
+      <meta itemprop="description" content="厚积薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Goodream">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-02 16:09:42" itemprop="dateCreated datePublished" datetime="2020-05-02T16:09:42+08:00">2020-05-02</time>
+            </span>
+
+          
+            <span id="/2020/05/02/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/02/hello-world/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/hello-world/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>357</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2><span id="quick-start">Quick Start</span></h2>
+<h3><span id="create-a-new-post">Create a new post</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3><span id="run-server">Run server</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3><span id="generate-static-files">Generate static files</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://goodream.cn/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Goodream">
+      <meta itemprop="description" content="厚积薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Goodream">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/" class="post-title-link" itemprop="url">屏幕边缘过渡带</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 13:47:00 / Modified: 16:09:42" itemprop="dateCreated datePublished" datetime="2020-05-02T13:47:00+08:00">2020-05-02</time>
+            </span>
+
+          
+            <span id="/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/" class="post-meta-item leancloud_visitors" data-flag-title="屏幕边缘过渡带" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>屏幕边缘处（包括圆孔、圆角、边）过渡到屏幕外的亮度渐变问题，使得背景建模在这些边界处出现非常恼人的结果，也是我们能够使用背景建模统一处理整个屏幕显示区域的阻碍。</p>
+<p>一般来说，我们会使用边界抑制的方式，减少这些位置对计算得分图结果的影响，例如乘以一个抑制系数。但目前这些方法带来的问题也是存在的，在应对不同缩放尺寸以及不同核的得分图时，往往需要针对某组特定的缩放比及得分图核，去对特定的区域设置特定的抑制系数。特定区域的选取不仅麻烦，也不利于维护；而抑制系数的选取在目前没有良好调试手段的情况下，受人为主观因素影响很大。最重要的是，对这些位置做针对性的屏蔽，的确不利于我们利用背景建模这一强力的工具去规范化处理整块屏幕。</p>
+<h1><span id="思路记录">思路记录</span></h1>
+<p>启发自函数cartToPolar，函数将梯度检测算子的结果转换为角度图。可以观察到圆孔周围的梯度变化非常的有规律且统一。既然圆孔本身是圆形，我们换一种角度，不用直角坐标而使用极坐标去看圆孔附近渐变问题会不会好一点？</p>
+<p><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410172428.png?v=1&amp;type=image&amp;token=V1:HikQ9gbLHpcksgZnjRWHdC7NiNeEJ1XvkZbXUQ25jpY" alt></p>
+<p>思考转换为极坐标需要哪些信息，首先需要找到圆心作为极坐标原点，Canny检测+霍夫圆变换获得近似圆心坐标，有了圆心坐标我们就可以建立极坐标系。一开始，我还想着能够用类似直方图统计的工具进行统计分析，后来对极坐标上的点采样过程中，发现极坐标与直角坐标的点需要作映射，就必须要用插值算出来，不然没法使用。为了能让分析的精度提升，采用浮点存储。极坐标下我们有两个重要参数<br>
+$$r,\Theta$$<br>
+限定半径范围[125,170]，半径步长0.5，角度范围[0°,360°]，角度步长2°，得到<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410180345.png?v=1&amp;type=image&amp;token=V1:PKfts1XXJN7OJTUWGFGs_9G_vPbNNcob9oLZZFGOJEs" alt></p>
+<p>导出采样数据作分析，作下图，横轴为采样点距离圆心的半径值，纵轴为采样点亮度值。这里的每一条线代表着一个角度下，随着半径由大到小，亮度值的变化。采样数据似乎不太符合我的期望，虽说数据趋势是正确的，但是出现了一定程度的横向偏移。假设圆孔是正圆，亮度变化是均匀的，相同半径的采样点亮度值应当差别不大。这里数据则体现了圆孔并非一个正圆，因此需要对算法作一定的调整，使其能够进行正确的采样。（因为采样点涉及到后面的亮度修正的工作，所以不能够错）</p>
+<p><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410180953.png?v=1&amp;type=image&amp;token=V1:YM4oA9J1L1HJvqXNFO9S1li_jp3Fy0yUDmssf24Ct3o" alt></p>
+<p>另外，半径标准差的变化也很大，也是表明了各角度下的下降过程没有对整。</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.853</td>
+<td>5.048</td>
+<td>5.385</td>
+<td>6.101</td>
+<td>6.671</td>
+<td>7.334</td>
+<td>11.352</td>
+<td>21.161</td>
+<td>4.620</td>
+</tr>
+</tbody>
+</table>
+<p>下一步考虑对其问题…………思路有两个<br>
+一是用Canny算出来的边缘信息构建样本点集<br>
+二是在现在的基础上作半径偏移</p>
+<p>保留局部差异的同时，抬升亮度，用函数拟合说不定可以？</p>
+<p><strong>Armadillo</strong><br>
+<strong>ALGLIB</strong><br>
+<a href="https://blog.csdn.net/weixin_40198941/article/details/94393918" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40198941/article/details/94393918</a><br>
+一个包含函数拟合的库，里面有类似于Matlab的功能，可以拟合3d数据<br>
+<strong>Eigen</strong><br>
+快速矩阵运算库，好像用处不大</p>
+<p><strong>VS多项目管理和使用</strong><br>
+<a href="https://blog.csdn.net/qq_34719188/article/details/80956749" target="_blank" rel="noopener">https://blog.csdn.net/qq_34719188/article/details/80956749</a><br>
+多项目编译</p>
+<p>4.21<br>
+上周分析傅里叶幅值谱的时候发现了个好用的函数，linearPolar采样结果<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421155849.png?v=1&amp;type=image&amp;token=V1:TgsPOBC0kYaN0zqQTYtVwE0gGZEpmoOjGThQFf2JHzM" alt></p>
+<p>自划分角度步长及半径采样结果（这样比较好，方便调整和重点分析）<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421155827.png?v=1&amp;type=image&amp;token=V1:ptqLvBPYYq-attA3dr_KLNNnkJUKHqZMOOLHT1eq1f8" alt></p>
+<p>高斯滤波器的调教方式<br>
+Size(5,9), x_delta = 0.2, y_delta = 5，重点抹平纵向，尽量保留横向<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421163244.png?v=1&amp;type=image&amp;token=V1:LdL54QfuevNcyjO7WVMkz6dYGykczrOwIZ7H0JjGT4U" alt></p>
+<p>观察发现延弧度方向并不那么平整，分块拟合曲线，计算出各块亮度变化趋势均值<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421162936.png?v=1&amp;type=image&amp;token=V1:mleAY4tMdIP5qLlMTgqqwpSPxMrPHhMh6fhcADByQsc" alt><br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421163639.png?v=1&amp;type=image&amp;token=V1:4DhJ_A_o7o4fANw-BM8rIqSMdilaMOuqC2PcHqk7X20" alt></p>
+<p>分块均值补全<br>
+<img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421175458.png?v=1&amp;type=image&amp;token=V1:qQcufg2uw7F_9qbh-WEj7Iyt7Pp5fjPNde8DZQHiDUo" alt></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://goodream.cn/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Goodream">
+      <meta itemprop="description" content="厚积薄发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Goodream">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/" class="post-title-link" itemprop="url">第一篇文章.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 04:53:34 / Modified: 16:09:42" itemprop="dateCreated datePublished" datetime="2020-05-02T04:53:34+08:00">2020-05-02</time>
+            </span>
+
+          
+            <span id="/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/" class="post-meta-item leancloud_visitors" data-flag-title="第一篇文章.md" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>21</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="aaa">AAA</span></h1>
+<h2><span id="aaaa">aaaa</span></h2>
+<h3><span id="aaaaa">aaaaa</span></h3>
+<h4><span id="aaaaaaaaa">aaaaaaaaa</span></h4>
+<p><img src="https://gitee.com/goodre4m/ImageURL/raw/master/img/avatar.jpg" alt></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Goodream"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Goodream</p>
+  <div class="site-description" itemprop="description">厚积薄发</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://goodre4m.github.io/blob/master/images/wechat.jpg" title="WeChat → https:&#x2F;&#x2F;goodre4m.github.io&#x2F;blob&#x2F;master&#x2F;images&#x2F;wechat.jpg" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>WeChat</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/Goodre4m" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Goodre4m" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ykliuzjut@163.com" title="E-Mail → mailto:ykliuzjut@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://leetcode-cn.com/u/goodre4m/" title="LeetCode → https:&#x2F;&#x2F;leetcode-cn.com&#x2F;u&#x2F;goodre4m&#x2F;" rel="noopener" target="_blank"><i class="fas fa-code fa-fw"></i>LeetCode</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://yoursite.com/" title="http:&#x2F;&#x2F;yoursite.com" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Goodre4m</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">2k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">2 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"2j5twB7NarGz5J371S6xNooc-9Nh9j0Va","app_key":"P73mfd1cfdEnX9XKLJaw1iPd","server_url":"https://goodre4m.gitee.io/","security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : '2j5twB7NarGz5J371S6xNooc-9Nh9j0Va',
+      appKey     : 'P73mfd1cfdEnX9XKLJaw1iPd',
+      placeholder: "吐槽一下",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '7' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

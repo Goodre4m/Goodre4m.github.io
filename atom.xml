@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Goodream</title>
+  
+  <subtitle>Make It Come True</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://goodream.cn/"/>
+  <updated>2020-05-02T08:09:42.161Z</updated>
+  <id>https://goodream.cn/</id>
+  
+  <author>
+    <name>Goodream</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://goodream.cn/2020/05/02/hello-world/"/>
+    <id>https://goodream.cn/2020/05/02/hello-world/</id>
+    <published>2020-05-02T08:09:42.161Z</published>
+    <updated>2020-05-02T08:09:42.161Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>屏幕边缘过渡带</title>
+    <link href="https://goodream.cn/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/"/>
+    <id>https://goodream.cn/2020/05/02/%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2/</id>
+    <published>2020-05-02T05:47:00.000Z</published>
+    <updated>2020-05-02T08:09:42.161Z</updated>
+    
+    <content type="html"><![CDATA[<p>屏幕边缘处（包括圆孔、圆角、边）过渡到屏幕外的亮度渐变问题，使得背景建模在这些边界处出现非常恼人的结果，也是我们能够使用背景建模统一处理整个屏幕显示区域的阻碍。</p><p>一般来说，我们会使用边界抑制的方式，减少这些位置对计算得分图结果的影响，例如乘以一个抑制系数。但目前这些方法带来的问题也是存在的，在应对不同缩放尺寸以及不同核的得分图时，往往需要针对某组特定的缩放比及得分图核，去对特定的区域设置特定的抑制系数。特定区域的选取不仅麻烦，也不利于维护；而抑制系数的选取在目前没有良好调试手段的情况下，受人为主观因素影响很大。最重要的是，对这些位置做针对性的屏蔽，的确不利于我们利用背景建模这一强力的工具去规范化处理整块屏幕。</p><h1><span id="思路记录">思路记录</span></h1><p>启发自函数cartToPolar，函数将梯度检测算子的结果转换为角度图。可以观察到圆孔周围的梯度变化非常的有规律且统一。既然圆孔本身是圆形，我们换一种角度，不用直角坐标而使用极坐标去看圆孔附近渐变问题会不会好一点？</p><p><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410172428.png?v=1&amp;type=image&amp;token=V1:HikQ9gbLHpcksgZnjRWHdC7NiNeEJ1XvkZbXUQ25jpY" alt></p><p>思考转换为极坐标需要哪些信息，首先需要找到圆心作为极坐标原点，Canny检测+霍夫圆变换获得近似圆心坐标，有了圆心坐标我们就可以建立极坐标系。一开始，我还想着能够用类似直方图统计的工具进行统计分析，后来对极坐标上的点采样过程中，发现极坐标与直角坐标的点需要作映射，就必须要用插值算出来，不然没法使用。为了能让分析的精度提升，采用浮点存储。极坐标下我们有两个重要参数<br>$$r,\Theta$$<br>限定半径范围[125,170]，半径步长0.5，角度范围[0°,360°]，角度步长2°，得到<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410180345.png?v=1&amp;type=image&amp;token=V1:PKfts1XXJN7OJTUWGFGs_9G_vPbNNcob9oLZZFGOJEs" alt></p><p>导出采样数据作分析，作下图，横轴为采样点距离圆心的半径值，纵轴为采样点亮度值。这里的每一条线代表着一个角度下，随着半径由大到小，亮度值的变化。采样数据似乎不太符合我的期望，虽说数据趋势是正确的，但是出现了一定程度的横向偏移。假设圆孔是正圆，亮度变化是均匀的，相同半径的采样点亮度值应当差别不大。这里数据则体现了圆孔并非一个正圆，因此需要对算法作一定的调整，使其能够进行正确的采样。（因为采样点涉及到后面的亮度修正的工作，所以不能够错）</p><p><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200410180953.png?v=1&amp;type=image&amp;token=V1:YM4oA9J1L1HJvqXNFO9S1li_jp3Fy0yUDmssf24Ct3o" alt></p><p>另外，半径标准差的变化也很大，也是表明了各角度下的下降过程没有对整。</p><table><thead><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr></thead><tbody><tr><td>4.853</td><td>5.048</td><td>5.385</td><td>6.101</td><td>6.671</td><td>7.334</td><td>11.352</td><td>21.161</td><td>4.620</td></tr></tbody></table><p>下一步考虑对其问题…………思路有两个<br>一是用Canny算出来的边缘信息构建样本点集<br>二是在现在的基础上作半径偏移</p><p>保留局部差异的同时，抬升亮度，用函数拟合说不定可以？</p><p><strong>Armadillo</strong><br><strong>ALGLIB</strong><br><a href="https://blog.csdn.net/weixin_40198941/article/details/94393918" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40198941/article/details/94393918</a><br>一个包含函数拟合的库，里面有类似于Matlab的功能，可以拟合3d数据<br><strong>Eigen</strong><br>快速矩阵运算库，好像用处不大</p><p><strong>VS多项目管理和使用</strong><br><a href="https://blog.csdn.net/qq_34719188/article/details/80956749" target="_blank" rel="noopener">https://blog.csdn.net/qq_34719188/article/details/80956749</a><br>多项目编译</p><p>4.21<br>上周分析傅里叶幅值谱的时候发现了个好用的函数，linearPolar采样结果<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421155849.png?v=1&amp;type=image&amp;token=V1:TgsPOBC0kYaN0zqQTYtVwE0gGZEpmoOjGThQFf2JHzM" alt></p><p>自划分角度步长及半径采样结果（这样比较好，方便调整和重点分析）<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421155827.png?v=1&amp;type=image&amp;token=V1:ptqLvBPYYq-attA3dr_KLNNnkJUKHqZMOOLHT1eq1f8" alt></p><p>高斯滤波器的调教方式<br>Size(5,9), x_delta = 0.2, y_delta = 5，重点抹平纵向，尽量保留横向<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421163244.png?v=1&amp;type=image&amp;token=V1:LdL54QfuevNcyjO7WVMkz6dYGykczrOwIZ7H0JjGT4U" alt></p><p>观察发现延弧度方向并不那么平整，分块拟合曲线，计算出各块亮度变化趋势均值<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421162936.png?v=1&amp;type=image&amp;token=V1:mleAY4tMdIP5qLlMTgqqwpSPxMrPHhMh6fhcADByQsc" alt><br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421163639.png?v=1&amp;type=image&amp;token=V1:4DhJ_A_o7o4fANw-BM8rIqSMdilaMOuqC2PcHqk7X20" alt></p><p>分块均值补全<br><img src="%E5%B1%8F%E5%B9%95%E8%BE%B9%E7%BC%98%E4%BA%AE%E5%BA%A6%E8%BF%87%E6%B8%A1%E5%B8%A6%E9%97%AE%E9%A2%98%E5%86%8D%E6%8E%A2_md_files/image_20200421175458.png?v=1&amp;type=image&amp;token=V1:qQcufg2uw7F_9qbh-WEj7Iyt7Pp5fjPNde8DZQHiDUo" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;屏幕边缘处（包括圆孔、圆角、边）过渡到屏幕外的亮度渐变问题，使得背景建模在这些边界处出现非常恼人的结果，也是我们能够使用背景建模统一处理整个屏幕显示区域的阻碍。&lt;/p&gt;
+&lt;p&gt;一般来说，我们会使用边界抑制的方式，减少这些位置对计算得分图结果的影响，例如乘以一个抑制系数。但目
+      
+    
+    </summary>
+    
+    
+    
+      <category term="aaaa" scheme="https://goodream.cn/tags/aaaa/"/>
+    
+      <category term="DIP" scheme="https://goodream.cn/tags/DIP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇文章.md</title>
+    <link href="https://goodream.cn/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/"/>
+    <id>https://goodream.cn/2020/05/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0-md/</id>
+    <published>2020-05-01T20:53:34.000Z</published>
+    <updated>2020-05-02T08:09:42.162Z</updated>
+    
+    <content type="html"><![CDATA[<h1><span id="aaa">AAA</span></h1><h2><span id="aaaa">aaaa</span></h2><h3><span id="aaaaa">aaaaa</span></h3><h4><span id="aaaaaaaaa">aaaaaaaaa</span></h4><p><img src="https://gitee.com/goodre4m/ImageURL/raw/master/img/avatar.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1&gt;&lt;span id=&quot;aaa&quot;&gt;AAA&lt;/span&gt;&lt;/h1&gt;
+&lt;h2&gt;&lt;span id=&quot;aaaa&quot;&gt;aaaa&lt;/span&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;span id=&quot;aaaaa&quot;&gt;aaaaa&lt;/span&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;span id=&quot;aaaaaaaaa&quot;&gt;aaaa
+      
+    
+    </summary>
+    
+    
+    
+      <category term="aaaa" scheme="https://goodream.cn/tags/aaaa/"/>
+    
+      <category term="Test" scheme="https://goodream.cn/tags/Test/"/>
+    
+  </entry>
+  
+</feed>
